@@ -1,4 +1,4 @@
-name: Weekly Catalog Export
+name: Catalog Export
 
 on:
   schedule:
