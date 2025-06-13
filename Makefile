@@ -2,6 +2,9 @@
 .uv:
 	@uv --version || echo 'Please install uv: https://docs.astral.sh/uv/getting-started/installation/'
 
+setup: .uv
+	uv sync
+
 apidata-docs:
 	@curl -s "https://r.jina.ai/datos.gob.es/en/accessible-apidata" > apidata.md
 
@@ -22,6 +25,8 @@ public-sectors:
 
 provinces:
 	uv run scripts/provinces.py
+
+catalog: apidata-docs datasets publishers spatials themes public-sectors provinces
 
 upload:
 	uvx --from "huggingface_hub[hf_xet]" huggingface-cli upload-large-folder \
