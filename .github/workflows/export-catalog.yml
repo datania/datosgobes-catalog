@@ -25,4 +25,6 @@ jobs:
       run: make parquets
 
     - name: Upload catalog data
+      env:
+        HUGGINGFACE_TOKEN: ${{ secrets.HUGGINGFACE_TOKEN }}
       run: make upload
