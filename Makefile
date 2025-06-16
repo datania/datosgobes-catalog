@@ -40,4 +40,5 @@ upload:
 	uvx --from "huggingface_hub[hf_xet]" huggingface-cli upload-large-folder \
 		--token=${HUGGINGFACE_TOKEN} \
 		--repo-type dataset \
+		--num-workers 4 \
 		datania/datosgobes-catalog catalog/
