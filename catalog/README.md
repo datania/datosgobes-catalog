@@ -8,6 +8,6 @@ configs:
   default: true
 ---
 
-# `datos.gob.es` Data Catalog
+# `datos.gob.es` Data Catalog 🗃️
 
 A snapshot of the [`datos.gob.es`](https://datos.gob.es) Data Catalog API [produced by Datania](https://github.com/datania/datosgobes-catalog).
