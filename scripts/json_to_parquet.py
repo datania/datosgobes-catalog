@@ -10,7 +10,10 @@ def main():
         description="Convert JSON files in a folder to a Parquet file"
     )
     parser.add_argument("folder", help="Path to the folder containing JSON files")
-    parser.add_argument("output_name", help="Name of the output Parquet file (without .parquet extension)")
+    parser.add_argument(
+        "output_name",
+        help="Name of the output Parquet file (without .parquet extension)",
+    )
     args = parser.parse_args()
 
     folder_path = Path(args.folder)
@@ -19,7 +22,7 @@ def main():
         return
 
     catalog_dir = Path(__file__).parent.parent / "catalog"
-    
+
     # Read all JSON files
     data = []
     for json_file in folder_path.rglob("*.json"):
@@ -37,11 +40,6 @@ def main():
         except ValueError:
             # If the file is not under catalog_dir, use relative to folder_path
             record["file_path"] = str(json_file.relative_to(folder_path))
-        
-        # For dataset folder, extract publisher_id from path structure
-        if "dataset" in folder_path.parts:
-            if json_file.parent.parent.name != folder_path.name:
-                record["publisher_id"] = json_file.parent.parent.name
 
         data.append(record)
 
