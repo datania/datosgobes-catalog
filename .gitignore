@@ -194,5 +194,5 @@ cython_debug/
 .cursorindexingignore
 
 # Catalog
-catalog
 !catalog/README.md
+catalog

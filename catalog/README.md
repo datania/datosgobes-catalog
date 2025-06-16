@@ -4,7 +4,17 @@ configs:
 - config_name: default
   data_files:
     - split: datasets
-      path: catalog/dataset/datasets.parquet
+      path: dataset/datasets.parquet
+    - split: publishers
+      path: publisher/publishers.parquet
+    - split: provinces
+      path: province/provinces.parquet
+    - split: spatial
+      path: spatial/spatial.parquet
+    - split: themes
+      path: theme/themes.parquet
+    - split: public_sectors
+      path: public-sector/public-sectors.parquet
   default: true
 ---
 

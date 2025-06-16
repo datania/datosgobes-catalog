@@ -28,6 +28,14 @@ provinces:
 
 catalog: apidata-docs datasets publishers spatials themes public-sectors provinces
 
+parquets:
+	uv run scripts/json_to_parquet.py catalog/dataset datasets
+	uv run scripts/json_to_parquet.py catalog/publisher publishers
+	uv run scripts/json_to_parquet.py catalog/province provinces
+	uv run scripts/json_to_parquet.py catalog/spatial spatial
+	uv run scripts/json_to_parquet.py catalog/theme themes
+	uv run scripts/json_to_parquet.py catalog/public-sector public-sectors
+
 upload:
 	uvx --from "huggingface_hub[hf_xet]" huggingface-cli upload-large-folder \
 		--token=${HUGGINGFACE_TOKEN} \

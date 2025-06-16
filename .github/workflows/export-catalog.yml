@@ -20,3 +20,9 @@ jobs:
 
     - name: Export catalog data
       run: make catalog
+
+    - name: Transform catalog data
+      run: make parquets
+
+    - name: Upload catalog data
+      run: make upload
