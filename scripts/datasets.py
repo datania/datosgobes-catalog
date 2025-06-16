@@ -44,6 +44,8 @@ def get_dataset_path(dataset_id: str) -> Path:
     """
     Generate hierarchical path for a dataset using only the initial UUID part.
     """
+    import hashlib
+
     # Extract just the first part before the hyphen (the UUID/identifier)
     uuid_part = dataset_id.split("-")[0] if "-" in dataset_id else dataset_id
 
@@ -60,7 +62,6 @@ def get_dataset_path(dataset_id: str) -> Path:
         name_without_ext = filename[:-5]  # Remove .json
         if len(name_without_ext) > max_name_length - 5:
             # Take first 60 chars and last 30 chars with hash for uniqueness
-            import hashlib
             hash_suffix = hashlib.md5(name_without_ext.encode()).hexdigest()[:8]
             truncated = name_without_ext[:60] + "-" + hash_suffix
             filename = truncated + ".json"
@@ -68,7 +69,12 @@ def get_dataset_path(dataset_id: str) -> Path:
     if len(uuid_part) < 4:
         return Path("catalog/dataset/misc") / filename
 
-    return Path(f"catalog/dataset/{uuid_part}/{filename}")
+    # Add subdirectory based on hash of full dataset_id to distribute files
+    # Use modulo 1000 to create buckets from 000 to 999
+    bucket = int(hashlib.md5(dataset_id.encode()).hexdigest()[:8], 16) % 1000
+    bucket_dir = f"{bucket:03d}"  # Format as 3-digit string with leading zeros
+
+    return Path(f"catalog/dataset/{uuid_part}/{bucket_dir}/{filename}")
 
 
 async def export_all_datasets():
