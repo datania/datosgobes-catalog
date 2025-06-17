@@ -1,86 +1,86 @@
-# `datos.gob.es` Data Catalog Export 🗃️
+# Exportación del Catálogo de Datos de `datos.gob.es` 🗃️
 
-Automated scripts to create comprehensive snapshots of Spain's open government data ecosystem from the `datos.gob.es` catalog using [their JSON API](https://datos.gob.es/en/accessible-apidata).
+Herramientas para exportar el catálogo de `datos.gob.es` de forma periódica usando la [API JSON](https://datos.gob.es/es/accessible-apidata).
 
-## 🚀 Quick Start
+## 🚀 Inicio
 
 ```bash
-# Install dependencies
+# Instalar dependencias
 make setup
 
-# Fetch complete catalog data
+# Obtener datos completos del catálogo
 make catalog
 
-# Upload to Hugging Face (requires HUGGINGFACE_TOKEN)
+# Subir a Hugging Face (requiere HUGGINGFACE_TOKEN)
 make upload
 ```
 
-## 📋 Prerequisites
+## 📋 Prerrequisitos
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
-- [HuggingFace](https://huggingface.co/) Token (for uploading datasets)
+- Token de [HuggingFace](https://huggingface.co/) (para subir conjuntos de datos)
 
-## 🛠️ Setup
+## 🛠️ Configuración
 
-1. Clone the repository:
+1. Clonar el repositorio:
 ```bash
-git clone <repository-url>
+git clone <url-del-repositorio>
 cd datosgobes-catalog
 ```
 
-2. Install dependencies:
+2. Instalar dependencias:
 ```bash
 make setup
 ```
 
-This will use `uv` to install all required Python packages from `pyproject.toml`.
+Esto usará `uv` para instalar todos los paquetes especificados en el archivo `pyproject.toml`.
 
-## 📊 Available Commands
+## 📊 Comandos Disponibles
 
-The [Makefile](./Makefile) provides convenient commands to fetch different types of data:
+El [Makefile](./Makefile) proporciona comandos útiles para obtener diferentes tipos de datos:
 
-- `make apidata-docs` - Fetch and save API documentation
-- `make datasets` - Export all datasets metadata
-- `make publishers` - Export publisher information
-- `make spatials` - Export geographical coverage data
-- `make themes` - Export theme/category information
-- `make public-sectors` - Export public sector taxonomy
-- `make provinces` - Export province information
-- `make catalog` - Run all exports (complete catalog snapshot)
+- `make apidata-docs` - Obtener y guardar la documentación de la API
+- `make datasets` - Exportar todos los metadatos de conjuntos de datos
+- `make publishers` - Exportar información de publicadores
+- `make spatials` - Exportar datos de cobertura geográfica
+- `make themes` - Exportar información de temas/categorías
+- `make public-sectors` - Exportar taxonomía del sector público
+- `make provinces` - Exportar información de provincias
+- `make catalog` - Ejecutar todas las exportaciones (instantánea completa del catálogo)
 
-## 📚 API Documentation
+## 📚 Documentación de la API
 
-The datos.gob.es API documentation is automatically fetched and saved to [`apidata.md`](./apidata.md). This file contains:
+La documentación de la API de `datos.gob.es` se actualiza automáticamente y se guarda en [`apidata.md`](./apidata.md). Este archivo contiene:
 
-- Available endpoints
-- Response formats (JSON, XML, RDF, Turtle, CSV)
-- Query parameters for filtering and pagination
-- Examples of API usage
+- Endpoints disponibles
+- Formatos de respuesta (JSON, XML, RDF, Turtle, CSV)
+- Parámetros de consulta para filtrado y paginación
+- Ejemplos de uso de la API
 
-## 🗂️ Data Structure
+## 🗂️ Estructura de Datos
 
-Exported data is saved in the `catalog/` directory with the following structure:
+Los datos exportados se guardan en el directorio `catalog/` con la siguiente estructura:
 ```
 catalog/
-├── datasets/           # Dataset metadata
-├── publishers/         # Publisher information
-├── spatials/          # Geographical coverage
-├── themes/            # Categories/topics
-├── public-sectors/    # NTI public sector taxonomy
-└── provinces/         # Province data
+├── datasets/           # Metadatos de conjuntos de datos
+├── publishers/         # Información de publicadores
+├── spatials/          # Cobertura geográfica
+├── themes/            # Categorías/temas
+├── public-sectors/    # Taxonomía NTI del sector público
+└── provinces/         # Datos de provincias
 ```
 
-## 🚀 Uploading to Hugging Face
+## 🚀 Subir a Hugging Face
 
-To upload the catalog to Hugging Face Hub:
+Para subir el catálogo a Hugging Face Hub:
 
 ```bash
-export HUGGINGFACE_TOKEN=your_token_here
+export HUGGINGFACE_TOKEN=tu_token_aquí
 make upload
 ```
 
-This uploads the entire `catalog/` directory to the `datania/datosgobes-catalog` dataset repository.
+Esto sube todo el directorio `catalog/` al repositorio de conjunto de datos `datania/datosgobes-catalog`.
 
-## 📄 License
+## 📄 Licencia
 
 MIT.
