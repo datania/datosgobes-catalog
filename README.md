@@ -1,4 +1,4 @@
-# Exportación del Catálogo de Datos de `datos.gob.es` 🗃️
+# Catálogo de Datos de `datos.gob.es` 🗃️
 
 Herramientas para exportar el catálogo de `datos.gob.es` de forma periódica usando la [API JSON](https://datos.gob.es/es/accessible-apidata).
 
