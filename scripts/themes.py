@@ -32,9 +32,21 @@ async def fetch_page(client: httpx.AsyncClient, page: int) -> Optional[dict]:
             await asyncio.sleep(delay)
 
 
-def extract_theme_id(item: dict) -> str:
-    """Extract theme ID from notation field"""
-    return item.get("notation", "")
+def extract_theme_id(item: object) -> str:
+    """Extract theme ID from notation field or resource URL"""
+    if isinstance(item, dict):
+        notation = item.get("notation")
+        if isinstance(notation, str) and notation.strip():
+            return notation.strip()
+
+        about = item.get("_about")
+        if isinstance(about, str) and about:
+            return about.rstrip("/").split("/")[-1]
+
+    if isinstance(item, str) and item:
+        return item.rstrip("/").split("/")[-1]
+
+    return ""
 
 
 def get_theme_path(theme_id: str) -> Path:
@@ -75,8 +87,22 @@ async def export_all_themes():
 
                     for item in items:
                         theme_id = extract_theme_id(item)
-                        if theme_id:
+                        if not theme_id:
+                            continue
+
+                        if isinstance(item, dict):
                             themes_to_save.append((theme_id, item))
+                        else:
+                            # Preserve the original resource URL with a minimal payload
+                            themes_to_save.append(
+                                (
+                                    theme_id,
+                                    {
+                                        "_about": item,
+                                        "notation": theme_id,
+                                    },
+                                )
+                            )
 
             empty_pages = 0 if found_any else empty_pages + 1
 
