@@ -32,9 +32,21 @@ async def fetch_page(client: httpx.AsyncClient, page: int) -> Optional[dict]:
             await asyncio.sleep(delay)
 
 
-def extract_publisher_id(item: dict) -> str:
-    """Extract publisher ID from notation field"""
-    return item.get("notation", "")
+def extract_publisher_id(item: object) -> str:
+    """Extract publisher ID from either notation field or resource URL"""
+    if isinstance(item, dict):
+        notation = item.get("notation")
+        if isinstance(notation, str) and notation.strip():
+            return notation.strip()
+
+        about = item.get("_about")
+        if isinstance(about, str) and about:
+            return about.rstrip("/").split("/")[-1]
+
+    if isinstance(item, str) and item:
+        return item.rstrip("/").split("/")[-1]
+
+    return ""
 
 
 def get_publisher_path(publisher_id: str) -> Path:
@@ -75,8 +87,22 @@ async def export_all_publishers():
 
                     for item in items:
                         publisher_id = extract_publisher_id(item)
-                        if publisher_id:
+                        if not publisher_id:
+                            continue
+
+                        if isinstance(item, dict):
                             publishers_to_save.append((publisher_id, item))
+                        else:
+                            # Create a minimal representation from the resource URL
+                            publishers_to_save.append(
+                                (
+                                    publisher_id,
+                                    {
+                                        "_about": item,
+                                        "notation": publisher_id,
+                                    },
+                                )
+                            )
 
             empty_pages = 0 if found_any else empty_pages + 1
 
