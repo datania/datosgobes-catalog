@@ -37,7 +37,7 @@ parquets:
 	uv run scripts/json_to_parquet.py catalog/public-sector public-sectors
 
 upload:
-	uvx --from "huggingface_hub[hf_xet]" huggingface-cli upload-large-folder \
+	uvx --from "huggingface_hub[hf_xet]" hf upload-large-folder \
 		--token=${HUGGINGFACE_TOKEN} \
 		--repo-type dataset \
 		--num-workers 4 \
