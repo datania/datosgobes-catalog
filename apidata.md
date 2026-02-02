@@ -3,6 +3,78 @@ Title: API - Datos.gob.es
 URL Source: http://datos.gob.es/en/accessible-apidata
 
 Markdown Content:
+API - Datos.gob.es
+===============
+
+[Skip to content](http://datos.gob.es/en/accessible-apidata#main-content)
+
+[![Image 1: Ministry for Digital Transformation and Public Service](http://datos.gob.es/sites/default/files/2024-03/logo_ministerio_cabecera_0.svg)](https://digital.gob.es/index.html "Ministry for Digital Transformation and Public Service")
+
+Language
+--------
+
+EN ![Image 2: Simple arrow icon](http://datos.gob.es/images/blue-arrow.svg)
+
+*   [Español](http://datos.gob.es/es/accessible-apidata)
+*   [English](http://datos.gob.es/en/accessible-apidata)
+*   [Català](http://datos.gob.es/ca/accessible-apidata)
+*   [Galego](http://datos.gob.es/gl/accessible-apidata)
+*   [Euskara](http://datos.gob.es/eu/accessible-apidata)
+
+[Publisher](http://datos.gob.es/en/accessible-apidata# "Publisher")
+
+[Log in](http://datos.gob.es/user/login)
+
+[![Image 3: Datos.gob.es. Reuse the public information . Go home](http://datos.gob.es/themes/custom/dge_theme/logo.svg)](http://datos.gob.es/en/ "Home")
+
+[](http://datos.gob.es/en/accessible-apidata)[Toggle menu](http://datos.gob.es/en/accessible-apidata#)
+
+Navigation
+----------
+
+*   [Data](http://datos.gob.es/en/accessible-apidata#data)[Open data catalogue](http://datos.gob.es/en/catalogo)[Data request](http://datos.gob.es/en/data-request)[Support for publishers](http://datos.gob.es/en/support-for-publishers)[Safe environments](http://datos.gob.es/en/safe-environments)[Data spaces](http://datos.gob.es/en/data-spaces) 
+*   [Community](http://datos.gob.es/en/accessible-apidata#community)[Initiatives](http://datos.gob.es/en/initiatives)[Companies](http://datos.gob.es/en/companies)[Applications](http://datos.gob.es/en/applications)[Challenges](http://datos.gob.es/en/aporta-challenge)[Sectors](http://datos.gob.es/en/sectors) 
+*   [Current news](http://datos.gob.es/en/accessible-apidata#current-news)[News](http://datos.gob.es/en/news)[Events](http://datos.gob.es/en/events) 
+*   [Knowledge](http://datos.gob.es/en/accessible-apidata#knowledge)[Blog](http://datos.gob.es/en/blog)[Data exercises](http://datos.gob.es/en/conocimiento/tipo/data-exercises-342)[Infographics](http://datos.gob.es/en/conocimiento/tipo/infographics-345)[Interviews](http://datos.gob.es/en/interviews)[Reports and guides](http://datos.gob.es/en/conocimiento/tipo/reports-and-studies-340/tipo/guides-343/tipo/training-materials-344/tipo/regulations-and-strategies-346)[Github datosgob](https://github.com/datosgobes) 
+*   [About us](http://datos.gob.es/en/accessible-apidata#about-us)[What we do](http://datos.gob.es/en/what-we-do)[Metrics and impact](http://datos.gob.es/en/metrics-and-impact)[Frequently Asked Questions](http://datos.gob.es/en/preguntas-frecuentes/faq_categoria/general-361)[Technology](http://datos.gob.es/en/technology)[Contact](http://datos.gob.es/en/contact)[Site map](http://datos.gob.es/en/sitemap) 
+
+*   [Español](http://datos.gob.es/es/accessible-apidata)
+*   [English](http://datos.gob.es/en/accessible-apidata)
+*   [Català](http://datos.gob.es/ca/accessible-apidata)
+*   [Galego](http://datos.gob.es/gl/accessible-apidata)
+*   [Euskara](http://datos.gob.es/eu/accessible-apidata)
+
+[Log in](http://datos.gob.es/user/login)
+
+ All sections ![Image 4: Blue arrow icon](http://datos.gob.es/images/blue-arrow.svg)
+*   [All sections](http://datos.gob.es/en/accessible-apidata)
+*   [Data catalogue](http://datos.gob.es/en/accessible-apidata)
+*   [Applications](http://datos.gob.es/en/accessible-apidata)
+*   [Blog](http://datos.gob.es/en/accessible-apidata)
+*   [Companies](http://datos.gob.es/en/accessible-apidata)
+*   [Data exercises](http://datos.gob.es/en/accessible-apidata)
+*   [Data request](http://datos.gob.es/en/accessible-apidata)
+*   [Events](http://datos.gob.es/en/accessible-apidata)
+*   [Infographics](http://datos.gob.es/en/accessible-apidata)
+*   [Initiatives](http://datos.gob.es/en/accessible-apidata)
+*   [Interviews](http://datos.gob.es/en/accessible-apidata)
+*   [News](http://datos.gob.es/en/accessible-apidata)
+*   [Reports and guides](http://datos.gob.es/en/accessible-apidata)
+
+You are here
+------------
+
+*   [Home](http://datos.gob.es/en/)
+*   [Data catalogue](http://datos.gob.es/en/catalogo/conjuntos-datos)
+*   API
+
+[](http://datos.gob.es/en/accessible-apidata)
+API
+===
+
+*   [![Image 5: Data Catalog icono](http://datos.gob.es/images/SVG/data-catalogue.svg)Data catalogue](http://datos.gob.es/en/catalogo "Data catalogue")
+*   [![Image 6: SPARQL icono](http://datos.gob.es/images/SVG/sparql.svg)SPARQL Endpoint](http://datos.gob.es/en/sparql "SPARQL Endpoint")
+
 The API is a mechanism which allows queries in the datos.gob.es semantic database. It provides access to information from the data catalogue and URIs defined in Annexes IV and V of the Technical Interoperability Regulations on the Re-Use of Information Resources.
 
 These queries can be carried out based on a series of criteria selected by the user and using uniform resource identifiers (URI).
@@ -91,3 +163,54 @@ Set of references which allow **primary sector taxonomy** queries and the **iden
 | **To obtain all the Autonomous Regions** | `http://datos.gob.es/apidata/nti/territory/Autonomous-region` |  |
 | **To obtain a specific Autonomous Region identified by the URI indicator** | `http://datos.gob.es/apidata/nti/territory/Autonomous-region/{id}` You must specify the `{id}` value. | For example, if the value of the `{id}` is `'Comunidad-Madrid'`, the reference will be: `http://datos.gob.es/apidata/nti/territory/Autonomous-region/Comunidad-Madrid` |
 | **To obtain the country** | `http://datos.gob.es/apidata/nti/territory/Country/España` |  |
+
+![Image 7: Chica trabajando con tecnologia](http://datos.gob.es/sites/default/files/2024-03/newsletter-datosgob-women-working_1.svg)
+
+### Do you want to keep up to date with data-related news?
+
+Subscribe to our newsletter to receive the latest news published on datos.gob.es
+
+[Subscribe ![Image 8: Decoration arrow icon](http://datos.gob.es/themes/custom/dge_theme/images/icons/decoration-arrow.svg)](http://datos.gob.es/en/formulario-de-alta " Subscription by e-mail to the latest news from datos.gob.es.")
+
+[Unsubscribe](http://datos.gob.es/en/formulario-de-baja "Unsubscribe from the data.gob.es bulletin")
+
+![Image 9: Footer menu decoration arrow icon](http://datos.gob.es/themes/custom/dge_theme/images/icons/footer-decoration-arrow.svg)
+
+*   Contact us
+    *   [Contact](http://datos.gob.es/en/contact)
+
+*   Information of interest
+    *   [FAQs](http://datos.gob.es/en/preguntas-frecuentes/faq_categoria/general-361)
+    *   [Legal notice](http://datos.gob.es/en/legal-notice)
+    *   [Site map](http://datos.gob.es/en/sitemap)
+    *   [Accessibility](http://datos.gob.es/en/accessibility)
+
+[![Image 10: Certificado de conformidad con el Esquema Nacional de Seguridad](http://datos.gob.es/sites/default/files/2025-03/logo_ENS.png)](http://datos.gob.es/sites/default/files/2025-03/Certificado_ENS.pdf)
+
+[![Image 11: Certificado IQNet](http://datos.gob.es/sites/default/files/2025-03/logo_IQnet.jpg)](http://datos.gob.es/es/iqnet)
+
+[![Image 12: Certificado de calidad ISO-9001:2015](http://datos.gob.es/sites/default/files/2025-03/9001INF.jpg)](http://datos.gob.es/sites/default/files/2025-03/Certificado_ISO_9001.pdf)
+
+[![Image 13: Certificado de calidad UNE-ISO/IEC 27001:2014](http://datos.gob.es/sites/default/files/2025-03/Segur_Info_27001_INF.jpg)](http://datos.gob.es/sites/default/files/2025-03/Certificado_ISO_27001.pdf)
+
+[![Image 14: Follow us on LinkedIn. Opens a new window](http://datos.gob.es/sites/default/files/2024-08/li_rrss.svg)](https://www.linkedin.com/company/datos-gob-es/)
+
+[![Image 15: Follow us on X. Opens a new window](http://datos.gob.es/sites/default/files/2024-03/X_rrss.svg)](https://x.com/datosgob)
+
+[![Image 16: Follow us on Instagram. Opens a new window](http://datos.gob.es/sites/default/files/2024-03/ig_rrss.svg)](https://www.instagram.com/datosgob/)
+
+[![Image 17: Follow us on YouTube. Opens a new window](http://datos.gob.es/sites/default/files/2024-03/yt_rrss.svg)](https://www.youtube.com/user/datosgob)
+
+[![Image 18: Follow us on Spotify. Opens a new window](http://datos.gob.es/sites/default/files/2025-10/spotify_rrss.svg)](https://open.spotify.com/show/32fn8GQ7rDQ9LDNgWsApPt)
+
+[![Image 19: Follow us on SlideShare. Opens a new window](http://datos.gob.es/sites/default/files/2024-08/slideshare_rrss.svg)](https://es.slideshare.net/datosgob)
+
+[![Image 20: Follow us on Flickr. Opens a new window](http://datos.gob.es/sites/default/files/2024-08/flkr_rrss.svg)](https://www.flickr.com/photos/datosgob/)
+
+[![Image 21: Follow us on GitHub. Opens a new window](http://datos.gob.es/sites/default/files/2024-08/github_rrss.svg)](https://github.com/datosgobes)
+
+[![Image 22: Ministry for Digital Transformation and Public Service](http://datos.gob.es/sites/default/files/2025-03/logo_ministerio_transformacion_digital.jpg)](https://digital.gob.es/index.html)
+
+[![Image 23: Red.es](http://datos.gob.es/sites/default/files/2025-03/logo_red-es.svg)](https://www.red.es/es)
+
+[![Image 24: Iniciativa Aporta](http://datos.gob.es/sites/default/files/2024-03/logo-iniciativa-aporta_positivo.svg)](http://datos.gob.es/en/what-we-do)
