@@ -2,6 +2,8 @@ Title: API - Datos.gob.es
 
 URL Source: http://datos.gob.es/en/accessible-apidata
 
+Published Time: Wed, 12 Aug 2026 14:14:30 GMT
+
 Markdown Content:
 The API is a mechanism which allows queries in the datos.gob.es semantic database. It provides access to information from the data catalogue and URIs defined in Annexes IV and V of the Technical Interoperability Regulations on the Re-Use of Information Resources.
 
